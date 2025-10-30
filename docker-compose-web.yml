@@ -1,0 +1,31 @@
+version: '3.8'
+
+services:
+  web-server:
+    build:
+      context: ./web-server
+      dockerfile: Dockerfile
+    container_name: web-server
+    ports:
+      - "80:80"
+      - "8000:8000"
+      - "2222:22"
+    volumes:
+      - ./web-server/app:/opt/app
+      - ./web-server/nginx:/etc/nginx/conf.d
+    networks:
+      - devops-network
+    depends_on:
+      - db-server
+    restart: unless-stopped
+    environment:
+      - DB_HOST=db-server
+      - DB_PORT=5432
+      - DB_NAME=devops_lab
+      - DB_USER=devops
+      - DB_PASSWORD=devops123
+
+networks:
+  devops-network:
+    external: true
+    name: devops-network

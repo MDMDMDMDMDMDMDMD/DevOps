@@ -1,0 +1,55 @@
+{
+  "users": [
+    {
+      "id": 1,
+      "name": "Иван Иванов",
+      "email": "ivan@example.com",
+      "role": "developer",
+      "department": "Backend",
+      "skills": ["Python", "PostgreSQL", "Docker"],
+      "active": true
+    },
+    {
+      "id": 2,
+      "name": "Мария Петрова",
+      "email": "maria@example.com",
+      "role": "devops",
+      "department": "Infrastructure",
+      "skills": ["Kubernetes", "Terraform", "CI/CD"],
+      "active": true
+    },
+    {
+      "id": 3,
+      "name": "Алексей Сидоров",
+      "email": "alexey@example.com",
+      "role": "frontend",
+      "department": "Frontend",
+      "skills": ["React", "TypeScript", "CSS"],
+      "active": true
+    },
+    {
+      "id": 4,
+      "name": "Елена Козлова",
+      "email": "elena@example.com",
+      "role": "qa",
+      "department": "Quality Assurance",
+      "skills": ["Selenium", "pytest", "API Testing"],
+      "active": false
+    },
+    {
+      "id": 5,
+      "name": "Дмитрий Новиков",
+      "email": "dmitry@example.com",
+      "role": "architect",
+      "department": "Architecture",
+      "skills": ["System Design", "Microservices", "AWS"],
+      "active": true
+    }
+  ],
+  "metadata": {
+    "total_count": 5,
+    "active_count": 4,
+    "last_updated": "2025-10-30T12:00:00Z",
+    "version": "1.0"
+  }
+}

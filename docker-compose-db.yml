@@ -1,0 +1,25 @@
+version: '3.8'
+
+services:
+  db-server:
+    build:
+      context: ./db-server
+      dockerfile: Dockerfile
+    container_name: db-server
+    ports:
+      - "5432:5432"
+    volumes:
+      - ./db-server/data:/var/lib/postgresql/data
+      - ./db-server/init:/docker-entrypoint-initdb.d
+    networks:
+      - devops-network
+    restart: unless-stopped
+    environment:
+      - POSTGRES_DB=devops_lab
+      - POSTGRES_USER=devops
+      - POSTGRES_PASSWORD=devops123
+
+networks:
+  devops-network:
+    external: true
+    name: devops-network

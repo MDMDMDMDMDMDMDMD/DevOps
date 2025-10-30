@@ -1,0 +1,44 @@
+application:
+  name: "DevOps Lab Web Application"
+  version: "1.0.0"
+  environment: "development"
+  debug: true
+
+database:
+  host: "db-server"
+  port: 5432
+  name: "devops_lab"
+  user: "devops"
+  password: "devops123"
+  pool_size: 10
+  max_overflow: 20
+  
+server:
+  host: "0.0.0.0"
+  port: 8000
+  workers: 4
+  reload: true
+
+logging:
+  level: "INFO"
+  format: "%(asctime)s - %(name)s - %(levelname)s - %(message)s"
+  file_path: "/opt/app/logs/app.log"
+  max_size_mb: 100
+  backup_count: 5
+
+features:
+  enable_api: true
+  enable_admin: false
+  enable_metrics: true
+  
+security:
+  cors_enabled: true
+  allowed_origins:
+    - "http://localhost"
+    - "http://127.0.0.1"
+  secret_key: "your-secret-key-here-change-in-production"
+
+paths:
+  static_files: "/opt/app/static"
+  templates: "/opt/app/templates"
+  uploads: "/opt/app/uploads"
